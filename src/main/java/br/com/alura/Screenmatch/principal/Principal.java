@@ -1,6 +1,7 @@
 package br.com.alura.Screenmatch.principal;
 
 import br.com.alura.Screenmatch.Model.DadoSerie;
+import br.com.alura.Screenmatch.Model.DadosEpisodios;
 import br.com.alura.Screenmatch.Model.DadosTemporadas;
 import br.com.alura.Screenmatch.service.ConsumoApi;
 import br.com.alura.Screenmatch.service.ConverteDados;
@@ -31,5 +32,14 @@ public class Principal {
             listaTemporadas.add(dadosTemporadas);
         }
         listaTemporadas.forEach(System.out::println);
+
+//        for (int i = 0; i < dados.totalTemporadas(); i++) {
+//            List<DadosEpisodios> episodiosTemporada = listaTemporadas.get(i).episodios();
+//            for (int j = 0; j < episodiosTemporada.size(); j++) {
+//                System.out.println(episodiosTemporada.get(j).titulo());
+//            }
+//        }
+
+        listaTemporadas.forEach(t -> t.episodios().forEach(e -> System.out.println(e.titulo())));
     }
 }
